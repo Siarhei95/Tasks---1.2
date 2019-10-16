@@ -52,4 +52,22 @@ public class Logic {
         }
         System.out.println("\nSorted posts: " + Arrays.toString(new ArrayList[]{arrayListPost})+"\n");
     }
+
+    public void getWord(String note, String finder){
+        Pattern p = Pattern.compile(""+finder+"\\s\\D+[\\;|,|:]");
+        Matcher m = p.matcher(note);
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+    }
+
+    public void add(String note,String addTheme, String addDate, String addEmail, String addPost){
+        StringBuffer sBuffer = new StringBuffer(""+note+"\n");
+        sBuffer.append("6 : "+addTheme+"            ,     "+addDate+"    ,        "+addEmail+" ,               "+addPost+";");
+        System.out.println(sBuffer);
+    }
+
+
+
+
 }
